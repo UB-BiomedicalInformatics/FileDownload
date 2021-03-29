@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>FileDownload</display-name>
+  <servlet>
+		<servlet-name>RegServlet</servlet-name>
+		<jsp-file>/WEB-INF/jsp/Login.jsp</jsp-file>		
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>RegServlet</servlet-name>
+		<url-pattern>/Login.jsp</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RegServlet</servlet-name>
+		<url-pattern>/register.jsp</url-pattern>
+	</servlet-mapping>	
+	<servlet-mapping>
+		<servlet-name>RegServlet</servlet-name>
+		<url-pattern>/consent.jsp</url-pattern>
+	</servlet-mapping>		
+	<servlet>
+		<servlet-name>UploadFileServlet</servlet-name>
+		<servlet-class>/WEB-INF/jsp/admin.jsp</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadFileServlet</servlet-name>
+		<url-pattern>/FileDownload/UploadFileServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DownloadFileServlet</servlet-name>
+		<servlet-class>com.DownloadFileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DownloadFileServlet</servlet-name>
+		<url-pattern>/FileDownload/DownloadFileServlet</url-pattern>
+	</servlet-mapping>
+	<context-param>
+    <param-name>uploadFile.dir</param-name>
+    <param-value>files</param-value>
+  </context-param>
+</web-app>
